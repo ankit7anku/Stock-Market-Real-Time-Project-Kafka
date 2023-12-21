@@ -1,4 +1,4 @@
-# Stock-Market-Real-Time-Project-Kafka
+# Stock-Market-Real-Time-Project-Kafka(Data Engineering)
 
 ## Overview
 This project involves implementing a comprehensive end-to-end data engineering solution for real-time stock market data using Kafka. The architecture incorporates various technologies such as Python, Amazon Web Services (AWS), Apache Kafka, Glue, Athena, and SQL.
