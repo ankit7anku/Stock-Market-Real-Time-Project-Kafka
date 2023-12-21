@@ -22,12 +22,12 @@ Any stock market dataset can be utilized for this project. The primary focus is 
 
 This project aims to demonstrate the seamless integration of various technologies to create an efficient and scalable real-time stock market data processing system. The technologies selected provide a well-rounded solution for data storage, processing, and analysis in a cloud environment.
 
-Here is the dataset used:- 
+Here is the dataset used:- https://github.com/ankit7anku/Stock-Market-Real-Time-Project-Kafka/blob/main/stkData.csv
 
 
 ## Complete Video link 
 
-Video Link -
+Video Link - https://youtu.be/T44vWo7bdr0
 
 
 
