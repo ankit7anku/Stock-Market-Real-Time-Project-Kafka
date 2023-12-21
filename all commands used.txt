@@ -1,0 +1,55 @@
+###
+Java Installation
+sudo apt update
+sudo apt install openjdk-11-jdk
+
+### 
+ZooKeeper Installation
+wget https://dlcdn.apache.org/zookeeper/zookeeper-3.8.3/apache-zookeeper-3.8.3-bin.tar.gz
+tar -xvf apache-zookeeper-3.8.3-bin.tar.gz
+
+###
+Kafka Installation
+wget https://downloads.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
+tar -xvf kafka_2.13-3.6.1.gz
+
+
+###
+Open another window to start Zoo-keeper:
+----------------------------------------
+cd apache-zookeeper-3.8.3-bin
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+
+###
+
+Open another window to start kafka server:-
+--------------------------------------------
+export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
+cd kafka_2.13-3.6.1
+bin/kafka-server-start.sh config/server.properties
+
+It is pointing to private server , change server.properties so that it can run in public IP 
+
+To do this , you can follow any of the 2 approaches shared belwo --
+Do a "sudo nano config/server.properties" - change ADVERTISED_LISTENERS to public ip of the EC2 instance
+
+
+###
+Create the topic:
+-----------------------------
+Duplicate the session & enter in a new console --
+cd kafka_2.13-3.6.1
+bin/kafka-topics.sh --create --topic demo_testing --bootstrap-server {public ip of EC2 instance}:9092 --replication-factor 1 --partitions 1
+
+###
+Start Producer:
+--------------------------
+bin/kafka-console-producer.sh --topic demo_testing --bootstrap-server {public ip of EC2 instance}33:9092
+
+###
+Start Consumer:
+-------------------------
+Duplicate the session & enter in a new console --
+cd kafka_2.13-3.6.1
+bin/kafka-console-consumer.sh --topic demo_testing --bootstrap-server  {public ip od EC2 instance}:9092
